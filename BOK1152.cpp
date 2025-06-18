@@ -9,7 +9,7 @@ getline(cin,q);
 for(int i=0; i<q.length();i++){
 if(q[0]==' '&& q.length()==1){
     cout << "0";
-    return 1;
+    return 0;
 }
 
 

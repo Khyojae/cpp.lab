@@ -3,7 +3,7 @@ using namespace std;
 int main(){
 
 int n;
-int arr[4];
+int arr[100];
 int count=0;
 int result=0;
 
