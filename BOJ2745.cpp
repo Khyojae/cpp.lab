@@ -1,27 +1,30 @@
 #include <iostream>
+#include <string>
+#include <cmath>
 using namespace std;
 int main(){
 string str;
-int brr[26] = {0};
-char arr[26] = {
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-    'u', 'v', 'w', 'x', 'y', 'z'
-};
-
+int a;
+int b;
+int sum=0;
 cin >> str;
-for(int p=0; p<str.length();p++){
-for(int i=0; i<26; i++){
-if(str[p]==arr[i]){
-brr[i] +=1; 
+cin >> b;
+for(int p=str.length()-1; p>=0;p--){
+for(int i=0; i<10; i++){
+if(str[p]== char(48+i)){
+sum+=(i+1)*pow(b,p);
 }
 }
+for(int i=0; i<26; i++)
+if(str[p] == char(65+i)){
+sum+=(10+i)*pow(b,p);
+}
+}
+cout << sum;
+
+
+
 }
 
-for(int i=0; i<26; i++){
-cout<<brr[i]<<" ";
-}
-
-}
 
 
