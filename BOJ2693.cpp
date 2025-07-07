@@ -17,7 +17,7 @@ cin >> a;
 vc.push_back(a);
 }
 sort(vc.begin(),vc.end());
-cout << vc[vc.size()-2] << '\n';
+cout << vc[vc.size()-3] << '\n';
 }
 
 

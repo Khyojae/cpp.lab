@@ -62,9 +62,10 @@ if(c != '.'){
 
 nptr root = tree['A'];
 
+preorder(root); cout<<'\n';
 
 inorder(root); cout<<'\n';
-preorder(root); cout<<'\n';
+
 postorder(root); cout<<'\n';
 
 

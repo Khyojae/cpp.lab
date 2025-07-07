@@ -4,17 +4,19 @@ int main(){
 double a,b;
 int c;
 int d;
+bool e;
 cin >> a >> b;
 cin >> c;
 cin >> d;
+
 for(int i=d; i<=100; i++){
-if(a*d+b<=c*d && c>a){
-cout << 1;
+if(a*i+b>c*i){
+cout << 0;
+return 0;
+}
 }
 
-else{
-cout << 0;
-}
-}
+
+cout << 1;
 
 }

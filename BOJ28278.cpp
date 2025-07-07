@@ -1,52 +1,50 @@
 #include <iostream>
+#include <algorithm>
+#include <stack>
 using namespace std;
-typedef int Datatype;
-typedef int element;
-class stack{
-
-
-};
-
-
-int main(){
-ios::sync_with_stdio(false);
-cin.tie(nullptr);
+int main (){
+ios::sync_with_stdio(0);
+cin.tie(0);
 int n;
-cin >> n;
+int k;
+stack<int> mystack;
 string str;
-stack q;
-
+cin >> n;
 
 for(int i=0; i<n; i++){
-int k=0;
-cin >> str;
-if(str=="push"){
+cin>>str;
+if(str=="1"){
 cin >> k;
-
+mystack.push(k);
 }
-else if(str=="front"){
-
-cout << '\n';
+if(str=="2"){
+if(mystack.empty()){
+cout<<"-1"<<'\n';
 }
-else if(str=="back"){
-
-cout << '\n';
+else{
+cout << mystack.top()<<'\n';
+mystack.pop();
 }
-else if(str=="size"){
-
-cout << '\n';
 }
-else if(str=="empty"){
-
-cout << '\n';
+if(str=="3"){
+cout << mystack.size()<<'\n';
 }
-else if(str=="pop"){
-
-cout << '\n';
+if(str=="4"){
+if(mystack.empty()){
+cout << "1"<<'\n';
+}
+else{
+cout << "0"<<'\n';
+}
+}
+if(str=="5"){
+if(mystack.empty()){
+cout << "-1"<<'\n';
+}
+else{
+cout << mystack.top()<<'\n';
+}
+}
 }
 
-}
-
-
-    
 }

@@ -1,11 +1,8 @@
 #include <iostream>
 using namespace std;
 int main(){
-int n;
+long long n;
 cin >> n;
-cout << n*n << '\n';
-cout << 2;
-
-
-
+cout << (n-2)*(n-1)*n/6 << '\n';
+cout << 3;
 }

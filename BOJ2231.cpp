@@ -25,9 +25,7 @@ return 0;
 }
 count++;
 }
-if(count>0){
 cout << '0';
-}
 
 
 }

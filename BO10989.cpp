@@ -1,43 +1,25 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <set>
 using namespace std;
-
-vector<int>vc;
-vector<int>ac;
 int main(){
-ios::sync_with_stdio(false);
-cin.tie(NULL);
+ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
 int n;
 cin >> n;
 
+int input[10001]={0};
+
 for(int i=0; i<n; i++){
-int num;
-cin >> num;
-vc.push_back(num);
-ac.push_back(num);  // 원본 
-}
-sort(vc.begin(),vc.end());   // 정렬하기
-
-
-vector<int>vec;
-int ac=-1;
-int counts[1000] = {0};
-for(int i=0; i<n; i++){  // 횟수 카운트
-if(i==0 || vc[i] != vc[i-1]){
-vec.push_back(vc[i]);
-ac++;
-}
-counts[ac]++;
+int in;
+cin >> in;
+input[in]+=1;
 }
 
-for(int i=0; i<vec.size(); i++){  // 횟수 만큼 출력
-for(int j=0; j<counts[i]; j++){
-cout << vec[i] << '\n';
+for(int i=1; i<10001; i++){
+for(int j=0; j<input[i]; j++){
+cout << i << '\n';
 }
 }
-
-
 
 }

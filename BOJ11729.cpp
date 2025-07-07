@@ -42,19 +42,7 @@ MoveDisk(from,to);  // 옮겨
          // 결합을 하자
 RecurMoveDisks(n-1,temp,from,to);
 
-count++; 
-
 }
-
-
-/*if(n>=4){
-return RecurMoveDisks(n-1,from,to,temp);  // 5-4 에서 바로 벗어나야하ㅣ않니
-MoveDisk(from,to);
-return RecurMoveDisks(n-1,temp,from,to);
-}*/
-
-
-
 
 int main()
 {
@@ -62,9 +50,6 @@ int main()
 cin >> num_disks;
 	for (int i = 0; i < num_disks; i++)
 		tower[0].push('1' + i);
-
-
-	// MoveDisk(0, 2); // <- 디스크 하나만 움직이는 함수 tower 0 -> tower 2
 
 	RecurMoveDisks(num_disks, 0, 1, 2);
 cout<< moves.size() << '\n';

@@ -18,7 +18,7 @@ if(myqueue.empty()){
 cout<<"-1"<<'\n';
 }
 else{
-cout<<myqueue.front();
+cout<<myqueue.front()<<'\n';
 myqueue.pop();
 }
 
@@ -41,7 +41,7 @@ if(myqueue.empty()){
 cout<<"-1"<<'\n';
 }
 else{
-cout<<myqueue.front();
+cout<<myqueue.front()<<'\n';
 }
 
 }

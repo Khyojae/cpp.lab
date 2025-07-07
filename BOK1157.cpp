@@ -4,6 +4,7 @@ int main() {
 char arr[26];
 char brr[26];
 int crr[26];
+int d;
 
 string a;
 for(int i=0; i<26; i++){
@@ -21,19 +22,21 @@ if(a[i]==arr[k] || a[i]==brr[k]){
 crr[k]=crr[k]+1;
  }   
 }
+}
 
 //뭐가 제일 크다
-int min = crr[0];
+int max = crr[0];
 for(int i=0; i<26; i++){
-if(min<crr[i]){
-    min=crr[i];
+if(max<crr[i]){
+    max=crr[i];
 }
 }
 
 int count=0;
 for(int i=0; i<26; i++){
-    if(crr[i]==min){
+    if(crr[i]==max){
         count++;
+        d=i;
     }
 }
 
@@ -41,7 +44,7 @@ if(count>1){
     cout << "?";
 }
 else{
-   cout<< arr[i]; 
+   cout<< arr[d]; 
 }
 
 }
@@ -49,4 +52,3 @@ else{
 
 
 
-}

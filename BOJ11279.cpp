@@ -26,6 +26,7 @@ Heap(int size = 1000){
 }
 
 void push(int ndata) {
+    if (cnt > n) return;  // 안전 처리
     heap[cnt] = ndata;
     heapify_bottomup(cnt);
     cnt++;
@@ -70,7 +71,7 @@ void heapify_topdown(int idx) {
 void print(){
 for(int i=1; i<=cnt; ++i){
     cout << heap[i] << ' ';
-cout<<endl;
+cout<<"\n";
 }
 }
 
@@ -95,12 +96,12 @@ if(i>0){
     }
 else if(i==0){
 if(h.cnt==1){
-cout << "0"<<endl;
+cout << "0"<<"\n";
 }
 else{
 
 h.pop();
-cout << endl;
+cout << "\n";
 }
 
 }

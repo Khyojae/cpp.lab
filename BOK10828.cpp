@@ -5,10 +5,10 @@ class stack{
 
 public:
 int *STACK;
-int n=1000;
+int n=100000;
 int cnt=0;
 
-stack(int size=1000){
+stack(int size=100000){
     n=size;
     STACK = new int [n+1];
 
@@ -22,14 +22,12 @@ void push(int data){
     cnt++;
 }
 
-int pop(){
-cnt--;
-return STACK[cnt];
+int pop() {
+    if (cnt == 0) return 0;  // 기본값 반환
+    cnt--;
+    return STACK[cnt];
 }
 
-int top(){
-return STACK[cnt];    
-}
 
 void print_stack(){
 for(int i=0; i<cnt; i++){
@@ -37,6 +35,9 @@ for(int i=0; i<cnt; i++){
 }
 }
 
+~stack() {
+    delete[] STACK;
+}
 };
 
 
@@ -68,7 +69,7 @@ int b=0;
 for(int i=0 ; i<s.cnt; i++){
 b=b+s.STACK[i];
 }
-if(s.cnt==-1){
+if(s.cnt==0){
 cout << "0";
 }
 else{

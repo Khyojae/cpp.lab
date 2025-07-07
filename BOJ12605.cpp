@@ -13,7 +13,7 @@ vc.push_back(a);
 sort(vc.begin(),vc.end());
 int sum1=0;
 for(int i=0; i<3; i++){
-sum1=sum1+vc[vc.size()-i];
+sum1=sum1+vc[vc.size()-1-i];
 }
 cout << sum1  << " ";
 
@@ -25,7 +25,7 @@ ac.push_back(b);
 sort(ac.begin(),ac.end());
 int sum2=0;
 for(int i=0; i<3; i++){
-sum2=sum2+vc[ac.size()-i];
+sum2=sum2+ac[ac.size()-i-1];
 }
 cout << sum2;
 

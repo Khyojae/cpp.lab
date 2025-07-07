@@ -28,7 +28,7 @@ sort(ac.begin(),ac.end());
 int a = *vc.begin();
 int c = *(vc.end()-1);
 cout<< "Class " << i+1 << "\n";
-cout << "Max " << c << ", " <<"Min " << a << ", "<< "Largest gap " << *(ac.end()-1);
+cout << "Max " << c << ", " <<"Min " << a << ", "<< "Largest gap " << *(ac.end()-1) << '\n';
 }
 
 }

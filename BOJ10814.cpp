@@ -24,13 +24,13 @@ for(int i=0; i<n; i++){
 int age;
 string name;
 cin >> age >> name ; 
-people.push_back(Person(age,name));
+people.push_back(Person(age,name));  //people배열에 person을 넣는다
 }
-sort(people.begin(),people.end(),compare);
+stable_sort(people.begin(),people.end(),compare);
 for(const auto &p : people){ // 컨테이너 쓸 때 유용
 // const 읽기 전용 
 // auto : 타입을 자동 추론
-// & : 참조 (복사 안하고 직접 접근) 
+// &p : 참조 (복사 안하고 직접 접근) 
 //  컨테이너 : 여러 개의 데이터를 저장하고 관리할 수 있는 자료구조
     cout << p.age << " " << p.name << '\n';
 }

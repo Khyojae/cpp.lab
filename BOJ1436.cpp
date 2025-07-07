@@ -7,7 +7,7 @@ cin >> n;
 string str;
 string target ="666";
 int count =1;
-double arr[10000];
+int  arr[10000];
 int k=0;
 int q=1;
 while(k<n){    //k를 계속 카운트

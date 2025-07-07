@@ -76,6 +76,8 @@ Items[front++];
 
 
 int main(){
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
 int n;
 cin >> n;
 string str;
@@ -91,18 +93,23 @@ q.Enqueue(k);
 }
 else if(str=="front"){
 q.printfront();
+cout << '\n';
 }
 else if(str=="back"){
 q.printback();
+cout << '\n';
 }
 else if(str=="size"){
 q.printsize();
+cout << '\n';
 }
 else if(str=="empty"){
 q.Empty();
+cout << '\n';
 }
 else if(str=="pop"){
 q.Dequeue();
+cout << '\n';
 }
 
 }

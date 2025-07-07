@@ -7,13 +7,14 @@ vector<pair<int,int>> v;
 int n,a,b;
 int cnt=0;
 int arr[50];
+cin >> n;
 for(int i=0; i<n; i++){
 arr[i]=1;
 }
-cin >> n;
+
 for(int i=0; i<n; i++){
 cin >> a >> b;
-v.push_back(pair<int,int>(b,a));
+v.push_back(pair<int,int>(a,b));
 }
 for(int i=0; i<n; i++){
 for(int k=i+1; k<n; k++){

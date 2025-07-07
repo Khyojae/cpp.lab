@@ -14,14 +14,14 @@ cout << "Case #"<< i+1 << ": ";
 
 if(a+b>c && a+c>b && b+c>a){
 
-if(a==b==c){
-cout<< "equilateral triangle" << endl;
+if(a==b&& a==c){
+cout<< "equilateral" << endl;
 }
-if(a!=b&& a!=c && b!=c){
-cout<< "scalene triangle" << endl;
+else if(a!=b&& a!=c && b!=c){
+cout<< "scalene" << endl;
 }
-if((a==b&& a!=c) || (a==c&& b!=c) || (b==c && (a!=b))){
-cout<< "isosceles triangle" << endl;
+else{
+cout<< "isosceles" << endl;
 }
 
 }

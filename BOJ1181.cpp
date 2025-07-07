@@ -25,8 +25,8 @@ cin >> word;
 words.push_back(word);  // 동적할당 뒤에 원소 나열
  }
 
- sort(words.begin(),words.end(),comp);
-words.erase(unique(words.begin(),words.end()),words.end());
+ sort(words.begin(),words.end(),comp);  // 정렬
+words.erase(unique(words.begin(),words.end()),words.end());  // 지우기
 for(int i=0; i<words.size(); i++){
 cout << words[i] << endl;
 }

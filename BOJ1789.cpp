@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 int main(){
-int a;
-int b=0;
-int k=1;
-int count=0;
+double a;
+double b=0;
+double k=1;
+double count=0;
 cin >> a;
 
 

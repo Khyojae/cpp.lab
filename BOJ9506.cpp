@@ -21,7 +21,7 @@ b+=arr[i];
 if(b==n){
 cout << b <<  "= ";
 for(int i=0; i<count; i++){
-cout << arr[i] << "";
+cout << arr[i] << " ";
 
 if(i<count-1){
 cout << "+" << " ";

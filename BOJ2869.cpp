@@ -1,16 +1,13 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main(){
 
 int A,B,V;
-int count=1;
+int count=0;
 cin >> A >> B >> V;
-count += (V-A)/(A-B);
 
-if((V-A)%(A-B)==0){
-cout << count;
-}
-if((V-A)%(A-B)==1){
-cout << count+1;
-}
+
+int day =ceil((double)(V-A)/(A-B))+1;
+cout << day;
 }

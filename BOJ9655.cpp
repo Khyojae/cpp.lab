@@ -4,10 +4,10 @@ int main(){
 int n;
 cin >> n;
 if(n%2==0){
-cout >> "CY";
+cout << "CY";
 }
 else{
-cout >> "SK";
+cout << "SK";
 }
 
 

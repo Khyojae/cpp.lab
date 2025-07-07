@@ -2,6 +2,8 @@
 #include <map>
 using namespace std;
 int main(){
+ios::sync_with_stdio(false);
+cin.tie(0);
 int n, num;
 cin >> n;
 map <int,int> count;

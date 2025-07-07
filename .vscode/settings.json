@@ -2,6 +2,16 @@
     "files.associations": {
         "iostream": "cpp",
         "string": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "boj27160": "cpp",
+        "algorithm": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "stack": "cpp",
+        "boj1934": "cpp",
+        "deque": "cpp",
+        "queue": "cpp",
+        "ios": "cpp",
+        "xiosbase": "cpp"
     }
 }

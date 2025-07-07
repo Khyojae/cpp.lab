@@ -24,22 +24,23 @@ dq.push_back(p);
 }
 
 else if(k==3){
-if(
-!dq.empty()){
-dq.pop_front();
+if(!dq.empty()){
 cout << dq.front()<<'\n';
+dq.pop_front();
+
 }    
-else{
+else if(dq.empty()){
 cout << -1<<'\n';
 }
 }
 else if(k==4){
 if(!dq.empty()){
-dq.pop_back();
 cout << dq.back()<<'\n';
+dq.pop_back();
+
 }    
-else{
-cout << '-1'<<'\n';
+else if(dq.empty()){
+cout << -1<<'\n';
 }
 }
 else if(k==5){
@@ -47,26 +48,26 @@ cout << dq.size()<<'\n';
 }
 else if(k==6){
 if(dq.empty()){
-cout << '1'<<'\n';
+cout << 1<<'\n';
 }
-else{
-cout << '0'<<'\n';
+else if(!dq.empty()){
+cout << 0<<'\n';
 }
 }
 else if(k==7){
 if(!dq.empty()){
 cout << dq.front()<<'\n';
 }
-else{
-cout << '-1'<<'\n';
+else if(dq.empty()){
+cout << -1<<'\n';
 }
 }
 else if(k==8){
 if(!dq.empty()){
 cout << dq.back()<<'\n';
 }
-else{
-cout << '-1'<<'\n';
+else if(dq.empty()){
+cout << -1<<'\n';
 }
 }
 }

@@ -20,7 +20,7 @@ cout<< "YES";
 else if(score["BANANA"]==5){
 cout<< "YES";
 }
-else if(score["LINE"]==5){
+else if(score["LIME"]==5){
 cout<< "YES";    
 }
 else if(score["PLUM"]==5){
