@@ -14,13 +14,20 @@ cin >> n;
 int size=0;
 priority_queue<int,vector<int>,greater<int>>pq;
 for(int i=0; i<n*n; i++){
+int num;
+cin >> num;
+
 if(size==n){
+if(pq.top()>num){ // 31 41 42
+continue;
+}
+
+else{
 pq.pop();
 size--;
 }
+}
 
-int num;
-cin >> num;
 pq.push(num);
 size++;
 

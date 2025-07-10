@@ -23,10 +23,10 @@ pq.push(num);
 
 else{
 if(pq.empty()){  // 아무것도 없음
-cout << 0;
+cout << 0 << '\n';
 }
 else{
-cout << pq.top();  // x가 0이라면 배열에서 절댓값이 가장 작은 값을 출력
+cout << pq.top() << '\n';  // x가 0이라면 배열에서 절댓값이 가장 작은 값을 출력
 pq.pop();
 }
 }

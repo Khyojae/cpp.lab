@@ -8,12 +8,11 @@ int n,m;
 int num;
 vector <int> vc;
 vector <int> ac;
- unordered_map<int, bool> ums;
-  unordered_map<int, int> ams;
+unordered_map<int, bool> ums;
+unordered_map<int, int> ams;
 cin >> n;    // 첫번째줄
 
 bool same= false;
-int count=1;
 for(int i=0; i<n; i++){   // 두번째줄
 cin >> num;
 if(ums[num]==true){

@@ -9,12 +9,12 @@ int totalB =(get<3>(b)+get<1>(b)+get<2>(b));
 if(get<1>(a) != get<1>(b)){
 return get<1>(a) > get<1>(b);  // 내림차순
 }
-else if(get<3>(a) != get<3>(b)){ // 국어점수가 같으면
-return get<3>(a) < get<3>(b);  // 오름차순
+else if(get<2>(a) != get<2>(b)){ // 국어점수가 같으면
+return get<2>(a) < get<2>(b);  // 오름차순
 }
 
-else if((get<2>(a) != get<2>(b))){
-return get<2>(a) > get<2>(b);
+else if((get<3>(a) != get<3>(b))){
+return get<3>(a) > get<3>(b);
 }
 
 
@@ -30,10 +30,10 @@ cin >> n;
 for(int i=0; i<n; i++){
 string name;
 int korean;
-int math;
 int english;
-cin >> name >> korean >> math >> english;
-vc.push_back({name,korean,math,english});
+int math;
+cin >> name >> korean >> english >> math;
+vc.push_back({name,korean,english,math});
 }
 sort(vc.begin(),vc.end(),comp);
 
