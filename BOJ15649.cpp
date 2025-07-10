@@ -1,60 +1,34 @@
 #include <iostream>
-#include <cassert>
-#include <algorithm> // swap
-
+#include <algorithm>
 using namespace std;
 
-void RecurPermutations(int* arr, int left, int right, int m)
-{	
-	// arr[left], ..., arr[right]
-	if (left == right)  
-	{for(int k=0; k<m; k++){
-	for (int i = 0; i <= right; i++)
-			{cout << arr[i+k] << " ";}
-	}
-		
+int n,m;
+int arr[10];
+bool isused[10];
 
-		
-		cout << endl;
-	}
-	else
-	{	
-//힌트
-//for , swap() , 재귀호출
-//같은 변수끼리도 swap() 가능
-// right는 고정
-
-for(int i=left; i<=right; i++){
-swap(arr[left],arr[i]);	    
-
-
-
-if(left<right){
-RecurPermutations(arr,left+1,right,m);
+void func(int k){
+if(k==m){
+for(int i=0; i<m; i++)
+    cout << arr[i] << ' ';
+cout << '\n';
+return;
 }
 
-swap(arr[left],arr[i]);	
+// 1. n번 나와야해
+// 2. 순차탐색이니 출력 뭐 나올건지 check
+for(int i=1; i<=n; i++){
+if(!isused[i]){  // 되돌아올때 걸려서
+    arr[k]=i;   // 출력 뭐 나올건지
+    isused[i]=1;  // 켜고
+    func(k+1);   // 걸림
+    isused[i]=0;  // 끄기 ( 다음에 쓸려고)
 }
-}	
+}
 }
 
 
 
-int main()
-{
-int m;
-int n;
-int arr[8];
-
-cin >> m >> n;
-for(int i=0; i<m; i++){
-arr[i]=i+1;
-}
-
-
-RecurPermutations(arr, 0, n-1,m);
-
-
-
-	return 0;
+int main(){
+cin >> n >> m;
+func(0);
 }
