@@ -1,33 +1,69 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <cmath>
-#include <map>
 using namespace std;
-int main(){
-int n;
 vector<int>vc;
-cin >> n;
-for(int i=0; i<n; i++){   // 대입
-int num;
-cin >> num;
-vc.push_back(num);
+vector<int>ac;
+
+void sieve(int n){
+vector<bool> is_prime(n+1,true);
+is_prime[0]=is_prime[1]=false; // 0과 1은 소수가 아님
+
+for(int p=2; p*p<=n; ++p){
+if(is_prime[p]){
+    for(int i=p*p; i<=n; i=i+p){
+        is_prime[i]=false;
+    }
 }
-sort(vc.begin(),vc.end());   // 정렬
-double sum=0;
-for(int i=0; i<n; i++){   // 산술평균 구할려고
-sum+=vc[i];
+
+}
+
+for(int i=2; i<n; i++){
+if(is_prime[i]){
+vc.push_back(i);
+}
+}
+}
+
+void sieve1(int m){
+vector<bool> is_prime(m+1,true);
+is_prime[0]=is_prime[1]=false; // 0과 1은 소수가 아님
+
+for(int p=2; p*p<=m; ++p){
+if(is_prime[p]){
+    for(int i=p*p; i<=m; i=i+p){
+        is_prime[i]=false;
+    }
+}
+
+}
+
+for(int i=2; i<=m; i++){
+if(is_prime[i]){
+ac.push_back(i);
+}
+}
+
+}
+
+int main(){
+int n,m;
+cin >> n >> m;
+sieve(n);
+sieve1(m);
+
+for(int i=0; i<vc.size(); i++){
+for(auto it = ac.begin(); it !=ac.end();){
+    if(vc[i]==*it){
+        it = ac.erase(it);
+    }
+    else{
+        ++it; 
+       }
+}
 }
 
 
-
-
-
-
-cout << round(sum*10)/10.0 << '\n';   // 산술평균
-cout << vc[(0+vc.size())/2]  << '\n';   // 중앙값
-
-cout << vc.end() - vc.begin();   // 범위
-
-
+for(int i=0; i<ac.size(); i++){
+cout << ac[i] << " ";
+}
 }
