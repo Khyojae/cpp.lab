@@ -1,46 +1,49 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <vector>
+#include <queue>
 using namespace std;
 
-const int MAX =10;
-int cnt=0;
+const int Max = 100005; // 여유 있게 크게
+vector<int> adj[Max];
+bool vis[Max];
+int numling[Max]={0};
+int label =1;
+void dfs(int cur){
+numling[cur]=label;
+label++;
+vis[cur]=true;
 
-void DFS(int start, vector<int> graph[], bool check[]){
-check[start]=true;
-cout << start << "\n";
-cout << "check 값 : " << check[start];
-for(int i=0; i<graph[start].size(); i++){
-int next = graph[start][i];
-
-if(!check[next]){
-DFS(next, graph, check);
-}
-}
-
-
-}
-
-int main(){
-int n,m,start; //노드개수, 간선개수
-cin >> n >> m >> start;  //그래프는 뭐 딱히 설정해줘야하는게 없다
-vector<int>graph[n+1];
-bool check[n+1]={false};
-for(int i=0; i<m; i++){
-int u,v;
-cin >> u >> v;
-graph[u].push_back(v);
-graph[v].push_back(u);
-}
-for(int i=1; i<=n; i++){
-sort(graph[i].begin(),graph[i].end());
-}
-DFS(start,graph,check);
-for(int i=1; i<=n;i++){
-if(check[i]==false){
-cout << 0 << '\n';
+for(auto nxt:adj[cur]){
+    if(vis[nxt]) continue;
+    dfs(nxt);
 }
 }
 
+
+int main() {
+
+    int label =1;
+    int n, m, b;
+    cin >> n >> m >> b;
+    fill(vis, vis + n + 1, false); // 입력 후 초기화!
+
+    for (int i = 0; i < m; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+
+    for(int i=1; i<=n; i++){
+    sort(adj[i].begin(),adj[i].end());
+    }
+
+ dfs(b);
+
+    for(int i=1; i<=n; i++){
+
+    cout << numling[i] << '\n';
+  
+    }
 }
