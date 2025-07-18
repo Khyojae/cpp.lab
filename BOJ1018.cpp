@@ -1,81 +1,62 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include <algorithm>
 using namespace std;
-int main(){
-int a,b;
-cin >> a >> b;
-int arr[50];
-vector<vector<char>> v(a, vector<char>(b,0));
-for(int i=0; i<a; i++){
-for(int k=0; k<b; k++){
-cin >> v[i][k];  // a * b 인 체스판 생성
-}
-}
 
-for(int i=0; i<a; i++){
-for(int k=0; k<b; k++){
-for(int p=i; p<=i+8; p++){
-for(int q=k; q<=k+8; q++){
-if(p>i+8 || q>k+8){
-break;
-}
-if(v[0][0]=='W'){
-if(p%2==0 && q%2==0){
-if(v[p][q]=='B'){
-arr[i]++;
-}
-}
+int main() {
+    char arr[50][50];
+    int n, m;
+    cin >> n >> m;
+    vector<int>vc;
 
-else if(p%2==1 && q%2==0){
-if(v[p][q]=='W'){
-arr[i]++;
-}    
-}
 
-else if(p%2==0 && q%2==1){
-if(v[p][q]=='W'){
-arr[i]++;
-}    
-}
+    string str;
+    for (int i = 0; i < n; i++) {
+        cin >> str;
+        for (int j = 0; j < str.length(); j++) {
+            arr[i][j] = str[j];
+        }
+    }
 
-else if(p%2==1 && q%2==1){
-if(v[p][q]=='B'){
-arr[i]++;
-}    
-}
-}
+    int count = 0;
 
-else if(v[0][0]=='B'){
-if(p%2==0 && q%2==0){
-if(v[p][q]=='W'){
-arr[i]++;
-}
-}
+    // 처음에 흰색인지 검정색인지 정해줘야 해서 if 걺
 
-else if(p%2==1 && q%2==0){
-if(v[p][q]=='B'){
-arr[i]++;
-}    
-}
+    if (arr[0][0] == 'W') {   // 첫 번째 색깔이 흰색
+        for (int i = 0; i < n; i++) {    // 시작 좌표를 정해야 해
+            for (int k = 0; k < m; k++) {
+                 int count=0;
+                for (int j = i; j < i + 8; j++) {
+                    for (int r = k; r < k + 8; r++) {    // 8*8번 해야 해
+                        if (arr[j][r] != 'W') {    // 이게 맞는지 틀렸는지 어케 아노; => 미리 세팅했잖슴
+                            count++;
+                        } else if (arr[j][r] != 'B') {  // i, k가 아닌 이유는 i, k가 시작점만 정해줘서
+                            count++;
+                        }
+                    }
+                }
+                vc.push_back(count);
+            }
+        }
+    } else if (arr[0][0] == 'B') {   // 첫 번째 색깔이 검정색
+        for (int i = 0; i < n; i++) {
+            for (int k = 0; k < m; k++) {
+                 int count=0;
+                for (int j = i; j < i + 8; j++) {
+                    for (int r = k; r < k + 8; r++) {
+                        if (arr[j][r] != 'W') {
+                            count++;
+                        } else if (arr[j][r] != 'B') {
+                            count++;
+                        }
+                    }
+                }
+                vc.push_back(count);
+            }
+        }
+    }
 
-else if(p%2==0 && q%2==1){
-if(v[p][q]=='W'){
-arr[i]++;
-}    
-}
-
-else if(p%2==1 && q%2==1){
-if(v[p][q]=='B'){
-arr[i]++;
-}    
-}
-    
-}
-}
-}
-}
-}
-sort(arr,arr+49);
-cout << arr[0];
+    sort(vc.begin(),vc.end());
+   cout <<  *vc.begin();
 }
