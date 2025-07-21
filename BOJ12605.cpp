@@ -1,32 +1,45 @@
 #include <iostream>
 #include <algorithm>
-#include <vector>
+#include <stack>
+#include <string>
 using namespace std;
 int main(){
-vector<int>vc;
-vector<int>ac;
-for(int i=0; i<10; i++){
-int a;
-cin >> a;
-vc.push_back(a);
-}
-sort(vc.begin(),vc.end());
-int sum1=0;
-for(int i=0; i<3; i++){
-sum1=sum1+vc[vc.size()-1-i];
-}
-cout << sum1  << " ";
+stack<string>st;
+int n;
+cin >> n;
+string str ;
+string input = "";
+int count=1;
+cin.ignore();
 
-for(int i=0; i<10; i++){
-int b;
-cin >> b;
-ac.push_back(b);
+for(int i=0; i<n; i++){
+string str;
+getline(cin,str);
+
+for(int i=0; i<str.length(); i++){
+if(str[i]!=' '){
+input+=str[i];
 }
-sort(ac.begin(),ac.end());
-int sum2=0;
-for(int i=0; i<3; i++){
-sum2=sum2+ac[ac.size()-i-1];
+
+if(str[i+1]==' '){
+st.push(input);
+input = "";
 }
-cout << sum2;
+}
+st.push(input);
+
+
+cout << "Case #" << count << ":" <<' ';
+count++;
+while(!st.empty()){
+cout << st.top() << ' ';
+st.pop();
+}
+input="";
+cout << '\n';
+
+}
+
+
 
 }
