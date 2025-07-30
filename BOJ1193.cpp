@@ -1,35 +1,43 @@
 #include <iostream>
-#include <cmath>
-#include <string>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main(){
-
-int w;
-cin >> w;
-string s = to_string(w);
-int arr[10];
-int brr[10];
-int crr[10];
-int r=0;
-
-
-for(int i=0; i<s.length(); i++){
-   arr[i] = s[i] - '0'; 
+vector<pair<int,int>>vc;
+long long n;
+cin >> n;
+long long count=1;
+long long num=1;
+for(int i=1; i<=count; i++){
+long long top=1;
+long long bottom=count;
+bool coin = true;
+for(int q=1; q<=i; q++){
+if(coin == true){
+top=top-1;
+bottom=bottom+1;
+coin =false;
 }
 
-for(int i=0; i< s.length(); i++){
-    cout << arr[i] << " ";
+top++;
+bottom--;
+if(i%2==1){
+vc.push_back({bottom,top});
+}
+else if(i%2==0){
+vc.push_back({top,bottom});
 }
 
-for(int i=0; i<s.length();i++){
-for(int k=0; arr[i]>0; k++){
-    brr[r]=arr[i]%2;
-    arr[i]=arr[i]/2;
-    crr[i]=
-    r++;
+if(num==n){
+cout << vc[n-1].first << "/" <<vc[n-1].second;
+return 0;
 }
+num++;
 }
+count++;
+}
+
 
 
 }
