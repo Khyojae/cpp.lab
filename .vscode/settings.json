@@ -1,6 +1,17 @@
 {
-    "files.associations": {
-        "iostream": "cpp",
-        "queue": "cpp"
-    }
+    "files.associations": {
+        "iostream": "cpp",
+        "queue": "cpp",           
+        "string": "cpp",
+        "utility": "cpp",
+        "boj27160": "cpp",
+        "algorithm": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "stack": "cpp",
+        "boj1934": "cpp",
+        "deque": "cpp",
+        "ios": "cpp",
+        "xiosbase": "cpp"
+    }
 }
